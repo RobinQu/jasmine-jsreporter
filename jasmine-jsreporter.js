@@ -27,9 +27,9 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
   THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-(function (jasmine) {
 
-  if (!jasmine) {
+(function (jasmineRequire) {
+  if (!jasmineRequire) {
     throw new Error("[Jasmine JSReporter] 'Jasmine' library not found");
   }
 
@@ -178,7 +178,7 @@
   };
 
   // export public
-  jasmine.JSReporter = JSReporter;
+  jasmineRequire.JSReporter = JSReporter;
 
 
   // ------------------------------------------------------------------------
@@ -218,7 +218,7 @@
     return _extend({}, obj);
   };
 
-  jasmine.JSReporter2 = function () {
+  jasmineRequire.JSReporter2 = function () {
     this.specs  = {};
     this.suites = {};
     this.rootSuites = [];
@@ -229,7 +229,7 @@
     jasmine.getJSReportAsString = this.getJSReportAsString;
   };
 
-  var JSR = jasmine.JSReporter2.prototype;
+  var JSR = jasmineRequire.JSReporter2.prototype;
 
   // Reporter API methods
   // --------------------
@@ -391,4 +391,4 @@
     };
   };
 
-})(jasmine);
+})(jasmineRequire);
